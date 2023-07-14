@@ -68,6 +68,7 @@ public class ResourceCentreTest {
 	public void testAddChromebook() {
 		// fail("Not yet implemented");
 		// write your code here 
+		
 		assertEquals("Test if Chromebook list is empty",0,chromebookList.size());
 		Chromebook cb4 = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
 		ResourceCentre.addChromebook(chromebookList, cb4);
