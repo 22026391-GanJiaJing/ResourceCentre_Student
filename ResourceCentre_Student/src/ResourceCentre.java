@@ -26,6 +26,7 @@ public class ResourceCentre {
 
 			} else if (option == 2) {
 				// Add a new item
+				
 				ResourceCentre.setHeader("ADD");			
 				ResourceCentre.setHeader("ITEM TYPES");
 				System.out.println("1. Camcorder");
@@ -153,7 +154,7 @@ public class ResourceCentre {
 
 		for (int i = 0; i < chromebookList.size(); i++) {
 			if (chromebookList.get(i).getIsAvailable()) {
-				output += String.format("%-10s %-30s %-10s %-10s %-20d\n", chromebookList.get(i).getAssetTag(),
+				output += String.format("%-10s %-30s %-10s %-10s %-20s\n", chromebookList.get(i).getAssetTag(),
 						chromebookList.get(i).getDescription(), 
 					ResourceCentre.showAvailability(chromebookList.get(i).getIsAvailable()),
 					chromebookList.get(i).getDueDate(),chromebookList.get(i).getOs());
@@ -177,7 +178,7 @@ public class ResourceCentre {
 		String description = Helper.readString("Enter description > ");
 		int zoom = Helper.readInt("Enter optical zoom > ");
 
-		Camcorder cc= new Camcorder(tag, description, zoom);
+		Camcorder cc= new Camcorder(tag, description, zoom); 
 		return cc;
 		
 	}
@@ -270,7 +271,7 @@ public class ResourceCentre {
 		    isLoaned = true;
 		   }
 		  }
-		  return true;
+		  return isLoaned;
 	}
 	public static void loanChromebook(ArrayList<Chromebook> chromebookList) {
 		// write your code here		
