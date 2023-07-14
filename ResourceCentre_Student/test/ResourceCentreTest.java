@@ -69,6 +69,7 @@ public class ResourceCentreTest {
 		// fail("Not yet implemented");
 		// write your code here 
 		
+		// Test if can add to list
 		assertEquals("Test if Chromebook list is empty",0,chromebookList.size());
 		Chromebook cb4 = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
 		ResourceCentre.addChromebook(chromebookList, cb4);
@@ -77,7 +78,16 @@ public class ResourceCentreTest {
 		ResourceCentre.addChromebook(chromebookList, cb5);
 		assertEquals("Test if another object has been added to the list", 2, chromebookList.size());
 		assertSame(cb5, chromebookList.get(1));
-
+		Chromebook cb6 = new Chromebook("CB0011", "My Google Chromebook 1st", "Mac OS");
+		
+		//Test duplicates
+		ResourceCentre.addChromebook(chromebookList, cb6);
+		assertEquals("Test if duplicates cannot be added", 2, chromebookList.size());
+		
+		//Test empty
+		Chromebook cbEmpty = new Chromebook("CB0014", "", "Win 10");
+		ResourceCentre.addChromebook(chromebookList, cbEmpty);
+		assertEquals("Test if duplicates cannot be added", 2, chromebookList.size());
 	}
 
 	@Test
